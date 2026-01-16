@@ -552,13 +552,13 @@ async def main():
 
     # Initialize components
     bot = Bot(token=config.telegram_bot_token)
-    db = Database(config.db_path)
+    db = Database(config.database_url)
     transcriber = Transcriber(config.openai_api_key)
     parser = ExerciseParser(config.anthropic_api_key)
 
     # Connect to database
     await db.connect()
-    logger.info(f"Database connected: {config.db_path}")
+    logger.info("Database connected")
 
     # Start polling
     logger.info("Starting bot...")
