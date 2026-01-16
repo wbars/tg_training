@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  gym-bot:
+    build: .
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      # Persist database outside container
+      - ./data:/app/data
